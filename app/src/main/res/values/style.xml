@@ -3,11 +3,41 @@
 
     <style name="items_informationbox_title_style">
         <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
     </style>
 
-    <style name="items_informationbox_title_textstyle">
+    <style name="items_informationbox_add_style">
         <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#878787</item>
     </style>
-    a
+
+    <style name="items_informationbox_Price_textstyle">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="roundedCorners">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="Etc_Icon_Option">
+        <item name="android:width">10dp</item>
+        <item name="android:height">10dp</item>
+
+    </style>
+
+    <style name="Etc_text_option">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">#494949</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+
+
 
 </resources>
