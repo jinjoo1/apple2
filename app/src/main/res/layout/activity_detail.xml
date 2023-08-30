@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--전체 세로배열 시작-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity"
+    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintHeight_percent="0.9"
+        app:layout_constraintBottom_toTopOf="@+id/price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            >
+
+
+            <!-- 전체비율 = 50(이미지) : 15(판매자정보) : 50(판매자글)-->
+            <!-- [50(이미지)]이미지 들어갈 레이아웃, 즉 50/115(0.4) 비율  -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintBottom_toTopOf="@+id/infoUser"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/im_sample1" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--[15(판매자정보)15/115=0.12]판매자 아이콘, 아이디와 주소, 매너온도 들어갈부분,가로배열(10:25:15)//시작-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/infoUser"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintBottom_toTopOf="@+id/seller"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image">
+
+                <!--판매자 아이콘 부분 // 둥근 이미지 비율 10/50(0.2)-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/sellericon"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toStartOf="@+id/sellIdAndAdd"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.2"
+                    android:padding="10dp">
+
+
+                    <!--이미지 아이콘 동그랗게 넣어줌 -->
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/sellerImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_person"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--아이디, 주소 부분이 들어갈 네모칸 (세로배열1:1) 시작 비율 25/50-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/sellIdAndAdd"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toEndOf="@+id/sellericon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.5">
+
+                    <!--아이디부분-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/sellerId"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toTopOf="@+id/sellerAdd"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom"
+                            android:paddingStart="10dp"
+                            android:text="진주임당"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/sellerAdd"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.5">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp"
+                            android:paddingTop="3dp"
+                            android:text="동래문구 온천제2동"
+                            android:textColor="#575757"
+                            android:textSize="12sp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <!--아이디, 주소 부분이 들어갈 네모칸 (세로배열1:1) 종료-->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--        매너온도, 아이콘이들어갈 곳 비율 15/50, 박스 안쪽비율 아이콘 2:1 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/mannerAndtext"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/sellIdAndAdd"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!--[2]온도 및 아이콘 표시 (세로) -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/manner"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.55"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:paddingTop="3dp">
+
+                        <!--온도표시-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/mannerTem"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_percent="0.6">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center|right"
+                                android:text="39.3°C"
+                                android:textColor="#009688"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/mannerIcon"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:padding="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/mannerTem"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imageView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_smile" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--[1]아래 매너온도라고 텍스트나오는곳 (세로) -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/mannerText"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/manner">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dp"
+                            android:gravity="center_vertical|right"
+                            android:text="@string/underlined_text"
+
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--판매자 아이콘, 아이디와 주소, 매너온도 들어갈부분,가로배열 //종료 -->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--가로줄추가-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/bg_hline"
+                app:layout_constraintTop_toBottomOf="@+id/infoUser" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/seller"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/infoUser">
+
+
+
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:text="샤넬 탑핸들 가방"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:text="샤넬 트렌디CC 탑핸들 스몰 램스킨 블랙 금장 플랩백 ! \n\n색상 : 블랙\n사이즈 : 25.5cm * 17.5cm * 8cm\n구성 : 본품, 더스트 \n\n급하게 돈이 필요해서 팝니다 ㅠ ㅠ ,,,\n\n\n\n\n스크롤 확인해야함 \n\n스크롤 ? 스크롤롤롤롤롤롤\n\n스크롤 ? 스크롤롤롤롤롤롤\n\n스크롤 ? 마지막줄"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--    //전체 0.9종료]-->
+    </ScrollView>
+
+    <!--전체 0.1시작-->
+
+    <!-- [10(가격및 채팅하기)=10/125 (0.08)]하트, 가격 , 채팅하기버튼 [1:3:2]-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!--[1]=1/6(하트 아이콘 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/priceheart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.16">
+
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.3"
+                app:layout_constraintHeight_percent="0.3"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_heart" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--세로선추가-->
+        <View
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_vline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/priceInprice"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toEndOf="@+id/priceheart"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--[3]가격 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/priceInprice"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/priceheart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:gravity="center_vertical"
+                android:text="180,000원"
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--[2]채팅하기 버튼 들어갈 공간-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/priceInprice"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/sel_button"
+                android:gravity="center"
+                android:text="채팅하기"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.8"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="30dp"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintWidth_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_backarrow"
+        android:alpha="0.8"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
