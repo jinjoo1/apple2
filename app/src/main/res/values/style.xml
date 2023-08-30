@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="items_informationbox_title_style">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="items_informationbox_title_textstyle">
+        <item name="android:textStyle">bold</item>
+    </style>
+    a
+
+</resources>
