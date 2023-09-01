@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+
+
+
+    <!--이미지넣는곳-->
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/iconItemCardView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="15dp"
+        android:layout_marginStart="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/items_informationbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/iconItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/im_sample1" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!--정보 : 제목 , 주소 , [가격, 댓글+좋아요]-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/items_informationbox"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iconItemCardView"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/tv_itemTitle"
+            style="@style/items_informationbox_title_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:text="산지 한달 된 선풍기 팝니다.\n산지 한달 된 선풍기 팝니다.산지 한달 된 선풍기 팝니다.산지 한달 된 선풍기 팝니다.산지 한달 된 선풍기 팝니다.산지 한달 된 선풍기 팝니다."
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+
+        <TextView
+            android:id="@+id/tv_address"
+            style="@style/items_informationbox_add_style"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="서울 서대문구 창천동"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_itemTitle" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/items_informationbox_priceAndEct"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_address">
+
+
+            <TextView
+                android:id="@+id/tv_price"
+                style="@style/items_informationbox_Price_textstyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1,000원"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/img_chat_id"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="2dp"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_chatCnt"
+                app:layout_constraintEnd_toStartOf="@+id/tv_chatCnt"
+                app:layout_constraintTop_toTopOf="@+id/tv_chatCnt"
+                app:srcCompat="@drawable/img_chat"
+                app:tint="#919191" />
+
+            <TextView
+                android:id="@+id/tv_chatCnt"
+                style="@style/Etc_text_option"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginEnd="5dp"
+                android:text="00"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_like"
+                app:layout_constraintEnd_toStartOf="@+id/iv_like"
+                app:layout_constraintTop_toTopOf="@+id/iv_like"
+                tools:ignore="TextSizeCheck" />
+
+            <ImageView
+                android:id="@+id/iv_like"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_likecnt"
+                app:layout_constraintEnd_toStartOf="@+id/tv_likecnt"
+                app:layout_constraintTop_toTopOf="@+id/tv_likecnt"
+                app:srcCompat="@drawable/img_like"
+                app:tint="#919191" />
+
+            <TextView
+                android:id="@+id/tv_likecnt"
+                style="@style/Etc_text_option"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="00"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="TextSizeCheck" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.4dp"
+        android:background="@drawable/bg_hline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

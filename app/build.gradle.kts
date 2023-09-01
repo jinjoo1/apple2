@@ -3,6 +3,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -51,5 +53,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation ("com.google.android.material:material:1.9.0")
+    implementation ("androidx.activity:activity-ktx:1.2.0")
+    implementation ("androidx.fragment:fragment-ktx:1.3.0")
 
 }
